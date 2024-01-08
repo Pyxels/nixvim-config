@@ -7,6 +7,12 @@
       actions.openFile.quitOnOpen = true;
       view.width = {};
       hijackCursor = true;
+      syncRootWithCwd = true;
+      respectBufCwd = true;
+      updateFocusedFile = {
+        enable = true;
+        updateRoot = true;
+      };
     };
 
     undotree = {
