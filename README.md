@@ -1,17 +1,12 @@
-# Nixvim template
+# Pyxels Neovim
 
-This template gives you a good starting point for configuring nixvim standalone.
+This is my personal Neovim config using [Nixvim](https://github.com/nix-community/nixvim).
+Compared to my [previous lua config](https://github.com/Pyxels/nvim-config) this is a lot more simple with some seldom used features and overcomplicated configs missing.
 
-## Configuring
+## Try it out
 
-To start configuring, just add or modify the nix files in `./config`.
-If you add a new configuration file, remember to add it to the
-[`config/default.nix`](./config/default.nix) file
-
-## Testing your new configuration
-
-To test your configuration simply run the following command
+If you want to run this config just execute:
 
 ```
-nix run .
+nix run github:pyxels/nixvim-config
 ```
