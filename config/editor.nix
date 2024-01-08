@@ -6,6 +6,7 @@
       autoClose = true;
       actions.openFile.quitOnOpen = true;
       view.width = {};
+      hijackCursor = true;
     };
 
     undotree = {
