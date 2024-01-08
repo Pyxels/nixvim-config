@@ -5,6 +5,7 @@
       disableNetrw = true;
       autoClose = true;
       actions.openFile.quitOnOpen = true;
+      view.width = {};
     };
 
     undotree = {
