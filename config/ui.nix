@@ -11,6 +11,14 @@
       enable = true;
       theme = "gruvbox";
       globalstatus = true;
+      sections = {
+          lualine_c = [
+            {
+              name = "filename";
+              extraConfig.path = 1;
+            }
+          ];
+      };
     };
 
     indent-blankline = {
