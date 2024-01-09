@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   plugins = {
     bufferline = {
       enable = true;
@@ -28,6 +28,10 @@
     notify.enable = true;
     noice.enable = true;
   };
+
+  extraPlugins = with pkgs.vimPlugins; [
+    dressing-nvim
+  ];
 
   keymaps = [
     {
