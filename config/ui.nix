@@ -25,6 +25,7 @@
       enable = true;
     };
 
+    notify.enable = true;
     noice.enable = true;
 
     fidget.enable = true;
