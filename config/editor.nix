@@ -5,7 +5,11 @@
       disableNetrw = true;
       autoClose = true;
       actions.openFile.quitOnOpen = true;
-      view.width = {};
+      view.width = {
+        min = 30;
+        max = -1;
+        padding = 1;
+      };
       hijackCursor = true;
       syncRootWithCwd = true;
       respectBufCwd = true;
