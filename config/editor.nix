@@ -224,15 +224,6 @@
       };
     }
 
-    {
-      key = "<Leader>n";
-      action = "<cmd>lua vim.notify.dismiss()<cr>";
-      options = {
-        silent = true;
-        desc = "Clear [N]otifications";
-      };
-    }
-    
     # #################### Nvim Tree ####################
     {
       key = "<Leader>e";

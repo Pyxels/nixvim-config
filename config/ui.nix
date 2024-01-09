@@ -56,5 +56,15 @@
         desc = "Pin [B]uffer";
       };
     }
+
+    {
+      key = "<Leader>n";
+      action = ":Noice dismiss<CR>";
+      options = {
+        silent = true;
+        desc = "Clear [N]otifications";
+      };
+    }
+    
   ];
 }
