@@ -2,7 +2,6 @@
   globals.mapleader = " ";
 
   keymaps = [
-
     # #################### Movement ####################
     {
       key = "<C-h>";
@@ -189,7 +188,7 @@
     }
 
     {
-      mode = [ "n" "v" ];
+      mode = ["n" "v"];
       key = "<Leader>y";
       action = "\"+y";
     }
@@ -199,7 +198,7 @@
       action = "\"+Y";
     }
     {
-      mode = [ "n" "v" ];
+      mode = ["n" "v"];
       key = "<Leader>p";
       action = "\"+p";
     }

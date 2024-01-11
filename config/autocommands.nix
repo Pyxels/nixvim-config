@@ -5,7 +5,7 @@
       command = "silent! lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 200})";
     }
     {
-      event = [ "BufEnter" "FocusGained" "InsertLeave" "CmdlineLeave" "WinEnter" ];
+      event = ["BufEnter" "FocusGained" "InsertLeave" "CmdlineLeave" "WinEnter"];
       callback = {
         __raw = "
 function()
@@ -29,7 +29,7 @@ end";
       };
     }
     {
-      event = [ "BufLeave" "FocusLost" "InsertEnter" "CmdlineEnter" "WinLeave" ];
+      event = ["BufLeave" "FocusLost" "InsertEnter" "CmdlineEnter" "WinLeave"];
       callback = {
         __raw = "
 function()

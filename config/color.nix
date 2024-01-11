@@ -9,6 +9,6 @@
     };
   };
 in {
-  extraPlugins = [ gruvbox-baby ];
+  extraPlugins = [gruvbox-baby];
   colorscheme = "gruvbox-baby";
 }

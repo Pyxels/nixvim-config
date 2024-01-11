@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   plugins = {
     bufferline = {
       enable = true;
@@ -12,12 +12,12 @@
       theme = "gruvbox";
       globalstatus = true;
       sections = {
-          lualine_c = [
-            {
-              name = "filename";
-              extraConfig.path = 1;
-            }
-          ];
+        lualine_c = [
+          {
+            name = "filename";
+            extraConfig.path = 1;
+          }
+        ];
       };
     };
 
@@ -66,6 +66,5 @@
         desc = "Clear [N]otifications";
       };
     }
-    
   ];
 }

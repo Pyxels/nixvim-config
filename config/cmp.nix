@@ -40,11 +40,11 @@
         end, { 'i', 's' })";
       };
       sources = [
-        { name = "nvim_lsp";}
-        { name = "crates";}
-        { name = "luasnip";}
-        { name = "buffer";}
-        { name = "path";}
+        {name = "nvim_lsp";}
+        {name = "crates";}
+        {name = "luasnip";}
+        {name = "buffer";}
+        {name = "path";}
       ];
     };
     cmp-buffer.enable = true;
