@@ -1,19 +1,14 @@
-{
-  colorschemes.gruvbox = {
-    enable = true;
+{pkgs, ...}: let
+  gruvbox-baby = pkgs.vimUtils.buildVimPlugin {
+    name = "gruvbox-baby";
+    src = pkgs.fetchFromGitHub {
+      owner = "luisiacc";
+      repo = "gruvbox-baby";
+      rev = "436f73d6a45777eadedbd2f842f766d093266eb3";
+      hash = "sha256-UPxfOkkLcK54g43fOrFukiXVdzgx8wQ2ve4QgTyzC7k=";
+    };
   };
-
-  # Fix gruvbox-nvim background colors for noice and gitsigns
-  # see https://github.com/ellisonleao/gruvbox.nvim/issues/230#issuecomment-1493883602
-  highlight = {
-    SignColumn = { fg="#ebdbb2"; bg="#282828"; };
-    GruvboxGreenSign = { fg = "#b8bb26"; bg = ""; };
-    GruvboxOrangeSign = { fg = "#fe8019"; bg = ""; };
-    GruvboxPurpleSign = { fg = "#d3869b"; bg = ""; };
-    GruvboxYellowSign = { fg = "#fabd2f"; bg = ""; };
-    GruvboxRedSign = { fg = "#fb4934"; bg = ""; };
-    GruvboxBlueSign = { fg = "#83a598"; bg = ""; };
-    GruvboxAquaSign = { fg = "#8ec07c"; bg = ""; };
-    NormalFloat = { fg = "#ebdbb2"; bg = ""; };
-  };
+in {
+  extraPlugins = [ gruvbox-baby ];
+  colorscheme = "gruvbox-baby";
 }
