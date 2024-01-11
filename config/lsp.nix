@@ -14,6 +14,19 @@
         volar.enable = true;
         bashls.enable = true;
       };
+
+      postConfig = "
+        vim.diagnostic.config({
+          severity_sort = true,
+          float = {
+            focusable = false,
+            style = 'minimal',
+            border = 'rounded',
+            source = 'always',
+            prefix = '',
+            header = '',
+          }
+        })";
     };
 
     none-ls = {
