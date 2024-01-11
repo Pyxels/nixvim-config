@@ -14,5 +14,6 @@
     GruvboxRedSign = { fg = "#fb4934"; bg = ""; };
     GruvboxBlueSign = { fg = "#83a598"; bg = ""; };
     GruvboxAquaSign = { fg = "#8ec07c"; bg = ""; };
+    NormalFloat = { fg = "#ebdbb2"; bg = ""; };
   };
 }
