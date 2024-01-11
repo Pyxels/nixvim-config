@@ -37,6 +37,7 @@
           enable = true;
           disableTsServerFormatter = true;
         };
+        formatting.alejandra.enable = true;
       };
     };
 
