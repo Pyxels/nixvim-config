@@ -25,6 +25,7 @@
       guifont = "monospace:h17"; # the font used in graphical neovim applications
       listchars = "tab:▷▷⋮,nbsp:␣,trail:·"; # characters to show instead of whitespace
       list = true; # show characters defined in listchars
+      mousemodel = "extend"; # no right click
     };
   };
 }
