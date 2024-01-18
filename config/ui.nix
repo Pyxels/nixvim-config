@@ -18,6 +18,13 @@
             extraConfig.path = 1;
           }
         ];
+        lualine_x = [
+          {
+            name = {
+              __raw = ''function() if package.loaded["noice"] and require("noice").api.status.mode.has() then return require("noice").api.status.mode.get() end return "" end'';
+            };
+          }
+        ];
       };
     };
 
