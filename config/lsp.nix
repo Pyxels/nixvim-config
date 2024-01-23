@@ -47,7 +47,7 @@
   extraPlugins = with pkgs.vimPlugins; [
     {
       plugin = package-info-nvim;
-      config = "lua require('package-info').setup()";
+      config = "lua require('package-info').setup({ hide_up_to_date = true })";
     }
   ];
 
