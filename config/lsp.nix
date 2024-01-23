@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   plugins = {
     lsp = {
       enable = true;
@@ -43,6 +43,13 @@
 
     crates-nvim.enable = true;
   };
+
+  extraPlugins = with pkgs.vimPlugins; [
+    {
+      plugin = package-info-nvim;
+      config = "lua require('package-info').setup()";
+    }
+  ];
 
   keymaps = [
     {
