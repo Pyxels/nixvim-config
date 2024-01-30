@@ -4,8 +4,8 @@
     src = pkgs.fetchFromGitHub {
       owner = "luisiacc";
       repo = "gruvbox-baby";
-      rev = "436f73d6a45777eadedbd2f842f766d093266eb3";
-      hash = "sha256-UPxfOkkLcK54g43fOrFukiXVdzgx8wQ2ve4QgTyzC7k=";
+      rev = "bd52e62d8134647090108189e69c8b3cd18bdbbf";
+      hash = "sha256-UhOYkVInyQrPy970NMKfFhq3JZA2zuWQdyDOfv9glp8=";
     };
   };
 in {
