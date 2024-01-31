@@ -13,6 +13,7 @@
         tsserver.enable = true;
         volar.enable = true;
         bashls.enable = true;
+        gopls.enable = true;
       };
 
       postConfig = "
