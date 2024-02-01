@@ -8,5 +8,6 @@
     ./autocommands.nix
     ./lsp.nix
     ./cmp.nix
+    ./other.nix
   ];
 }
