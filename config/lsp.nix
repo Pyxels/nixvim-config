@@ -4,7 +4,7 @@
       enable = true;
 
       servers = {
-        nil_ls.enable = true;
+        nixd.enable = true;
         rust-analyzer = {
           enable = true;
           installRustc = false;
