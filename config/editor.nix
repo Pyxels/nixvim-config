@@ -17,6 +17,14 @@
         enable = true;
         updateRoot = true;
       };
+      onAttach = {
+        __raw = ''
+          -- open directories and files with l
+          function(bufnr)
+            vim.keymap.set("n", "l", require("nvim-tree.api").node.open.edit, { buffer = bufnr, noremap = true, desc = "Edit Or Open" })
+          end
+        '';
+      };
     };
 
     undotree = {
