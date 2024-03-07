@@ -5,6 +5,13 @@
       diagnostics = "nvim_lsp";
       showCloseIcon = false;
       showBufferCloseIcons = false;
+      numbers = {
+        __raw = ''
+          function(number_opts)
+            return require("harpoon.mark").get_index_of(vim.api.nvim_buf_get_name(number_opts.id))
+          end
+        '';
+      };
     };
 
     lualine = {
