@@ -31,7 +31,7 @@
 
     undotree = {
       enable = true;
-      focusOnToggle = true;
+      settings.FocusOnToggle = true;
     };
 
     gitsigns = {
