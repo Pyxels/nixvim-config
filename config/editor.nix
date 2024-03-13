@@ -21,7 +21,9 @@
         __raw = ''
           -- open directories and files with l
           function(bufnr)
-            vim.keymap.set("n", "l", require("nvim-tree.api").node.open.edit, { buffer = bufnr, noremap = true, desc = "Edit Or Open" })
+            local api = require("nvim-tree.api")
+            api.config.mappings.default_on_attach(bufnr)
+            vim.keymap.set("n", "l", api.node.open.edit, { buffer = bufnr, noremap = true, desc = "Edit Or Open" })
           end
         '';
       };
