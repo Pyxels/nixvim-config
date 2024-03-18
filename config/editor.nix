@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   plugins = {
     nvim-tree = {
       enable = true;
@@ -75,6 +75,20 @@
       };
     };
   };
+
+  extraPlugins = [
+    (pkgs.vimUtils.buildVimPlugin
+      {
+        name = "hbac";
+        src = pkgs.fetchFromGitHub {
+          owner = "axkirillov";
+          repo = "hbac.nvim";
+          rev = "e2e8333aa56ef43a577ac3a2a2e87bdf2f0d4cbb";
+          hash = "sha256-7+e+p+0zMHPJjpnKNkL7QQHZJGQ1DFZ6fsofcsVNXaY=";
+        };
+      })
+  ];
+  extraConfigLua = "require('hbac').setup()";
 
   keymaps = [
     {
