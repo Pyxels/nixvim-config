@@ -27,6 +27,10 @@
       list = true; # show characters defined in listchars
       mousemodel = "extend"; # no right click
       showmode = false;
+      fillchars = {fold = " ";};
+      foldmethod = "indent";
+      foldenable = false;
+      foldlevel = 99;
     };
   };
 }
