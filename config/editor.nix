@@ -36,14 +36,16 @@
 
     gitsigns = {
       enable = true;
-      currentLineBlame = true;
-      numhl = true;
-      signs = {
-        add.text = "▐";
-        change.text = "▐";
-        delete.text = "󰐊";
-        topdelete.text = "󰐊";
-        changedelete.text = "▐";
+      settings = {
+        current_line_blame = true;
+        numhl = true;
+        signs = {
+          add.text = "▐";
+          change.text = "▐";
+          delete.text = "󰐊";
+          topdelete.text = "󰐊";
+          changedelete.text = "▐";
+        };
       };
     };
 
@@ -57,7 +59,7 @@
 
     surround.enable = true;
 
-    comment-nvim.enable = true;
+    comment.enable = true;
 
     luasnip.enable = true;
 

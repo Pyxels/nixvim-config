@@ -1,6 +1,6 @@
 {
   config = {
-    options = {
+    opts = {
       ignorecase = true; # ignore case in search patterns
       smartcase = true; # smart case
       pumheight = 10; # pop up menu max height
