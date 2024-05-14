@@ -14,11 +14,17 @@
       };
     };
     flake-parts.url = "github:hercules-ci/flake-parts";
+
+    pre-commit-hooks = {
+      url = "github:cachix/git-hooks.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     nixvim,
     flake-parts,
+    pre-commit-hooks,
     ...
   } @ inputs: let
     config = import ./config; # import the module directly
@@ -34,6 +40,7 @@
       perSystem = {
         pkgs,
         system,
+        self',
         ...
       }: let
         nixvimLib = nixvim.lib.${system};
@@ -45,10 +52,34 @@
       in {
         checks = {
           # Run `nix flake check .` to verify that your config is not broken
-          default = nixvimLib.check.mkTestDerivationFromNvim {
+          nixvim = nixvimLib.check.mkTestDerivationFromNvim {
             inherit nvim;
             name = "A nixvim configuration";
           };
+
+          git-hooks = pre-commit-hooks.lib.${system}.run {
+            src = ./.;
+            hooks = {
+              alejandra.enable = true;
+              flake-checker.enable = true;
+              nil.enable = true;
+              deadnix.enable = true;
+              statix.enable = true;
+
+              shellcheck.enable = true;
+              actionlint.enable = true;
+              commitizen.enable = true;
+              check-merge-conflicts.enable = true;
+
+              check-yaml.enable = true;
+              yamllint.enable = true;
+            };
+          };
+        };
+
+        devShells.default = pkgs.mkShell {
+          inherit (self'.checks.git-hooks) shellHook;
+          buildInputs = self'.checks.git-hooks.enabledPackages;
         };
 
         packages = {
