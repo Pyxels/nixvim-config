@@ -71,8 +71,15 @@
               commitizen.enable = true;
               check-merge-conflicts.enable = true;
 
+              yamllint = {
+                enable = true;
+                settings.configuration = ''
+                  rules:
+                    truthy:
+                      check-keys: false
+                '';
+              };
               check-yaml.enable = true;
-              yamllint.enable = true;
             };
           };
         };
