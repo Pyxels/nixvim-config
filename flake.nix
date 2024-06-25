@@ -2,12 +2,11 @@
   description = "Pyxels Nixvim";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.follows = "nixvim/nixpkgs";
 
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs = {
-        nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
         home-manager.follows = "";
         nix-darwin.follows = "";
