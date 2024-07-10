@@ -8,13 +8,14 @@
       url = "github:nix-community/nixvim";
       inputs = {
         flake-parts.follows = "flake-parts";
+        git-hooks.follows = "git-hooks";
         home-manager.follows = "";
         nix-darwin.follows = "";
       };
     };
     flake-parts.url = "github:hercules-ci/flake-parts";
 
-    pre-commit-hooks = {
+    git-hooks = {
       url = "github:cachix/git-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -23,7 +24,7 @@
   outputs = {
     nixvim,
     flake-parts,
-    pre-commit-hooks,
+    git-hooks,
     ...
   } @ inputs: let
     config = import ./config; # import the module directly
@@ -56,7 +57,7 @@
             name = "A nixvim configuration";
           };
 
-          git-hooks = pre-commit-hooks.lib.${system}.run {
+          git-hooks = git-hooks.lib.${system}.run {
             src = ./.;
             hooks = {
               alejandra.enable = true;
