@@ -49,37 +49,13 @@
         };
       in {
         checks = {
-          # Run `nix flake check .` to verify that your config is not broken
+          # Run `nix flake check .` to verify that the config is not broken
           nixvim = nixvim.lib.${system}.check.mkTestDerivationFromNvim {
             inherit nvim;
             name = "A nixvim configuration";
           };
 
-          git-hooks = git-hooks.lib.${system}.run {
-            src = ./.;
-            hooks = {
-              alejandra.enable = true;
-              flake-checker.enable = true;
-              nil.enable = true;
-              deadnix.enable = true;
-              statix.enable = true;
-
-              shellcheck.enable = true;
-              actionlint.enable = true;
-              commitizen.enable = true;
-              check-merge-conflicts.enable = true;
-
-              yamllint = {
-                enable = true;
-                settings.configuration = ''
-                  rules:
-                    truthy:
-                      check-keys: false
-                '';
-              };
-              check-yaml.enable = true;
-            };
-          };
+          git-hooks = import ./git-hooks.nix {inherit git-hooks system;};
         };
 
         devShells.default = pkgs.mkShell {
