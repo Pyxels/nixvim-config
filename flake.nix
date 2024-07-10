@@ -43,7 +43,7 @@
         self',
         ...
       }: let
-        nvim = nixvim.legacyPackages.${system}.makeNixvimWithModule {
+        nixvim-config = nixvim.legacyPackages.${system}.makeNixvimWithModule {
           inherit pkgs;
           module = config;
         };
@@ -51,7 +51,7 @@
         checks = {
           # Run `nix flake check .` to verify that the config is not broken
           nixvim = nixvim.lib.${system}.check.mkTestDerivationFromNvim {
-            inherit nvim;
+            nvim = nixvim-config;
             name = "A nixvim configuration";
           };
 
@@ -64,8 +64,49 @@
         };
 
         packages = {
+          inherit nixvim-config;
           # Lets you run `nix run .` to start nixvim
-          default = nvim;
+          default = nixvim-config;
+        };
+      };
+
+      flake = {
+        homeModules.default = {
+          config,
+          lib,
+          pkgs,
+          ...
+        }: let
+          cfg = config.nixvim-config;
+        in {
+          options.nixvim-config = {
+            enable = lib.mkEnableOption "Add nvim with this nixvim config to packages.";
+
+            aliases = with lib.types;
+              lib.mkOption {
+                description = "List of aliases to be added to bash";
+                type = listOf str;
+                default = [];
+                example = ["v" "vim"];
+              };
+          };
+
+          config = lib.mkIf cfg.enable {
+            home = {
+              packages = [inputs.self.packages.${pkgs.system}.nixvim-config];
+              sessionVariables.EDITOR = "nvim";
+
+              shellAliases = lib.mkIf (builtins.length cfg.aliases > 0) (
+                builtins.listToAttrs (
+                  builtins.map (alias: {
+                    name = alias;
+                    value = "nvim";
+                  })
+                  cfg.aliases
+                )
+              );
+            };
+          };
         };
       };
     };
