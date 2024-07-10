@@ -43,16 +43,14 @@
         self',
         ...
       }: let
-        nixvimLib = nixvim.lib.${system};
-        nixvim' = nixvim.legacyPackages.${system};
-        nvim = nixvim'.makeNixvimWithModule {
+        nvim = nixvim.legacyPackages.${system}.makeNixvimWithModule {
           inherit pkgs;
           module = config;
         };
       in {
         checks = {
           # Run `nix flake check .` to verify that your config is not broken
-          nixvim = nixvimLib.check.mkTestDerivationFromNvim {
+          nixvim = nixvim.lib.${system}.check.mkTestDerivationFromNvim {
             inherit nvim;
             name = "A nixvim configuration";
           };
