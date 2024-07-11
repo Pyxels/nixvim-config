@@ -20,9 +20,9 @@ git-hooks.lib.${system}.run {
     yamllint = {
       enable = true;
       settings.configuration = ''
-                rules:
-        truthy:
-                check-keys: false
+        rules:
+          truthy:
+            check-keys: false
       '';
     };
     check-yaml.enable = true;
