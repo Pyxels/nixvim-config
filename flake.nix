@@ -77,6 +77,13 @@
             nixvim-config.package = perSystem.config.packages.default;
           }
         );
+
+        nixosModules.default = moduleWithSystem (
+          {config} @ perSystem: _: {
+            imports = [./nixos-module.nix];
+            nixvim-config.package = perSystem.config.packages.default;
+          }
+        );
       };
     });
 }
