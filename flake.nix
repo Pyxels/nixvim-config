@@ -29,7 +29,7 @@
   } @ inputs: let
     config = import ./config; # import the module directly
   in
-    flake-parts.lib.mkFlake {inherit inputs;} {
+    flake-parts.lib.mkFlake {inherit inputs;} ({moduleWithSystem, ...}: {
       systems = [
         "x86_64-linux"
         "aarch64-linux"
@@ -71,43 +71,12 @@
       };
 
       flake = {
-        homeModules.default = {
-          config,
-          lib,
-          pkgs,
-          ...
-        }: let
-          cfg = config.nixvim-config;
-        in {
-          options.nixvim-config = {
-            enable = lib.mkEnableOption "Add nvim with this nixvim config to packages.";
-
-            aliases = with lib.types;
-              lib.mkOption {
-                description = "List of aliases to be added to bash";
-                type = listOf str;
-                default = [];
-                example = ["v" "vim"];
-              };
-          };
-
-          config = lib.mkIf cfg.enable {
-            home = {
-              packages = [inputs.self.packages.${pkgs.system}.nixvim-config];
-              sessionVariables.EDITOR = "nvim";
-
-              shellAliases = lib.mkIf (builtins.length cfg.aliases > 0) (
-                builtins.listToAttrs (
-                  builtins.map (alias: {
-                    name = alias;
-                    value = "nvim";
-                  })
-                  cfg.aliases
-                )
-              );
-            };
-          };
-        };
+        homeModules.default = moduleWithSystem (
+          {config} @ perSystem: _: {
+            imports = [./home-manager-module.nix];
+            nixvim-config.package = perSystem.config.packages.default;
+          }
+        );
       };
-    };
+    });
 }
