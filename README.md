@@ -38,17 +38,25 @@ environment.systemPackages = [
 ];
 ```
 
-### Home-Manager module
-This flake also exposes a simple home manger module to enable the config and set shell aliases.
+### Home-Manager/NixOS module
+This flake also exposes a simple Home-Manager and NixOS module to enable the config and set shell aliases.
 
+Enable the the desired module by importing it:
 ```nix
 imports = [
   inputs.nixvim-config.homeModules.default
 ];
+```
+```nix
+imports = [
+  inputs.nixvim-config.nixosModules.default
+];
+```
 
+Enable the config and optionally set aliases:
+```nix
 nixvim-config = {
   enable = true;
-  aliases = ["v" "vim"];
+  aliases = ["v" "vim"]; # optional
 };
-
 ```
