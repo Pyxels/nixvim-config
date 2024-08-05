@@ -21,6 +21,7 @@ function()
   }
 
   if exclude[vim.api.nvim_buf_get_option(bufnr, 'filetype')] then
+    vim.o.number = false
     return
   end
   vim.o.relativenumber = true
