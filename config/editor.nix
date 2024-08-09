@@ -120,14 +120,6 @@
       };
     }
     {
-      key = "<Leader>sr";
-      action = "<cmd>Telescope oldfiles<cr>";
-      options = {
-        silent = true;
-        desc = "[S]earch [R]ecent Files";
-      };
-    }
-    {
       key = "<Leader>sR";
       action = "<cmd>Telescope registers<cr>";
       options = {
