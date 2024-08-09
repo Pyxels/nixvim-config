@@ -1,19 +1,5 @@
 {pkgs, ...}: {
   plugins = {
-    bufferline = {
-      enable = true;
-      diagnostics = "nvim_lsp";
-      showCloseIcon = false;
-      showBufferCloseIcons = false;
-      numbers = {
-        __raw = ''
-          function(number_opts)
-            return require("harpoon.mark").get_index_of(vim.api.nvim_buf_get_name(number_opts.id))
-          end
-        '';
-      };
-    };
-
     lualine = {
       enable = true;
       theme = "gruvbox";
@@ -58,31 +44,6 @@
   ];
 
   keymaps = [
-    {
-      key = "<S-l>";
-      action = ":BufferLineCycleNext<CR>";
-      options = {
-        silent = true;
-        desc = "Next buffer";
-      };
-    }
-    {
-      key = "<S-h>";
-      action = ":BufferLineCyclePrev<CR>";
-      options = {
-        silent = true;
-        desc = "Previous buffer";
-      };
-    }
-    {
-      key = "<Leader>B";
-      action = ":BufferLineTogglePin<CR>";
-      options = {
-        silent = true;
-        desc = "Pin [B]uffer";
-      };
-    }
-
     {
       key = "<Leader>n";
       action = ":Noice dismiss<CR>";
