@@ -120,14 +120,6 @@
       };
     }
     {
-      key = "<Leader>sM";
-      action = "<cmd>Telescope man_pages<cr>";
-      options = {
-        silent = true;
-        desc = "[S]earch [M]an Pages";
-      };
-    }
-    {
       key = "<Leader>sr";
       action = "<cmd>Telescope oldfiles<cr>";
       options = {
