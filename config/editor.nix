@@ -104,14 +104,6 @@
       };
     }
     {
-      key = "<Leader>P";
-      action = "<cmd>lua require('telescope').extensions.projects.projects()<cr>";
-      options = {
-        silent = true;
-        desc = "[P]rojects";
-      };
-    }
-    {
       key = "<Leader>sb";
       action = "<cmd>Telescope git_branches<cr>";
       options = {
