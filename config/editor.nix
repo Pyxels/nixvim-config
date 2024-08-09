@@ -63,6 +63,8 @@
 
     luasnip.enable = true;
 
+    nvim-bqf.enable = true;
+
     harpoon = {
       enable = true;
       keymaps = {
@@ -79,6 +81,15 @@
   };
 
   keymaps = [
+    {
+      key = "<Leader>q";
+      action = "<cmd>copen<cr>";
+      options = {
+        silent = true;
+        desc = "Toggle qf list";
+      };
+    }
+    # #################### Telescope ####################
     {
       key = "<Leader>b";
       action = "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>";
