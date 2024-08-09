@@ -112,14 +112,6 @@
       };
     }
     {
-      key = "<Leader>sC";
-      action = "<cmd>Telescope colorscheme<cr>";
-      options = {
-        silent = true;
-        desc = "[S]earch [C]olorschemes";
-      };
-    }
-    {
       key = "<Leader>sh";
       action = "<cmd>Telescope help_tags<cr>";
       options = {
