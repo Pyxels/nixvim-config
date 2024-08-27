@@ -50,6 +50,7 @@ function()
   end
   vim.o.relativenumber = false
   vim.o.cul = false
+  vim.o.number = true
 end";
       };
     }
