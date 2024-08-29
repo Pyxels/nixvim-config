@@ -64,20 +64,6 @@
     luasnip.enable = true;
 
     nvim-bqf.enable = true;
-
-    harpoon = {
-      enable = true;
-      keymaps = {
-        toggleQuickMenu = "<A-y>";
-        addFile = "<A-u>";
-        navFile = {
-          "1" = "<A-n>";
-          "2" = "<A-e>";
-          "3" = "<A-i>";
-          "4" = "<A-o>";
-        };
-      };
-    };
   };
 
   keymaps = [
