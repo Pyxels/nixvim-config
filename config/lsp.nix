@@ -18,7 +18,7 @@
         # vue workaround: see https://github.com/nix-community/nixvim/issues/1937
         # additional configuration for volar
         # https://github.com/vuejs/language-tools?tab=readme-ov-file#hybrid-mode-configuration-requires-vuelanguage-server-version-200
-        tsserver = {
+        ts-ls = {
           enable = true;
           filetypes = [
             "typescript"
