@@ -1,48 +1,18 @@
-{
-  pkgs,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   plugins = {
     lsp = {
       enable = true;
       inlayHints = true;
 
       servers = {
-        nil-ls.enable = true;
-        rust-analyzer = {
+        nil_ls.enable = true;
+        rust_analyzer = {
           enable = true;
           installRustc = false;
           installCargo = false;
         };
-        # vue workaround: see https://github.com/nix-community/nixvim/issues/1937
-        # additional configuration for volar
-        # https://github.com/vuejs/language-tools?tab=readme-ov-file#hybrid-mode-configuration-requires-vuelanguage-server-version-200
-        ts-ls = {
-          enable = true;
-          filetypes = [
-            "typescript"
-            "javascript"
-            "javascriptreact"
-            "typescriptreact"
-            "vue"
-          ];
-          extraOptions = {
-            init_options = {
-              plugins = [
-                {
-                  name = "@vue/typescript-plugin";
-                  location = "${lib.getBin pkgs.vue-language-server}/lib/node_modules/@vue/language-server";
-                  languages = ["vue"];
-                }
-              ];
-            };
-          };
-        };
-        volar = {
-          enable = true;
-          package = pkgs.vue-language-server;
-        };
+        ts_ls.enable = true;
+        volar.enable = true;
         bashls.enable = true;
         gopls.enable = true;
       };

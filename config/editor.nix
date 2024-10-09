@@ -28,6 +28,7 @@
         '';
       };
     };
+    web-devicons.enable = true;
 
     undotree = {
       enable = true;
