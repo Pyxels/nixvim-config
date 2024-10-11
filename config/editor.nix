@@ -3,6 +3,7 @@
     nvim-tree = {
       enable = true;
       disableNetrw = true;
+      hijackNetrw = true;
       autoClose = true;
       actions.openFile.quitOnOpen = true;
       view.width = {
@@ -26,6 +27,38 @@
             vim.keymap.set("n", "l", api.node.open.edit, { buffer = bufnr, noremap = true, desc = "Edit Or Open" })
           end
         '';
+      };
+      view = {
+        float = {
+          enable = true;
+        };
+      };
+      renderer = {
+        icons = {
+          gitPlacement = "after";
+          modifiedPlacement = "after";
+          glyphs = {
+            default = "";
+            symlink = "";
+            folder = {
+              default = "/";
+              empty = "/";
+              emptyOpen = "/";
+              open = "/";
+              symlink = "/";
+              symlinkOpen = "/";
+            };
+            git = {
+              unstaged = "*";
+              staged = "✓";
+              unmerged = " ";
+              renamed = "->";
+              untracked = "?";
+              deleted = "x";
+              ignored = "◌";
+            };
+          };
+        };
       };
     };
     web-devicons.enable = true;
