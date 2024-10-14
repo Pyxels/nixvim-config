@@ -29,6 +29,7 @@
         '';
       };
       view = {
+        preserveWindowProportions = true;
         float = {
           enable = true;
         };
