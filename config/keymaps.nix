@@ -213,7 +213,7 @@
     }
     {
       key = "<Leader>c";
-      action = "<cmd>bd<CR>";
+      action = "<cmd>bp|bd #<CR>";
       options = {
         silent = true;
         desc = "Close current Buffer";
