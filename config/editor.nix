@@ -6,11 +6,6 @@
       hijackNetrw = true;
       autoClose = true;
       actions.openFile.quitOnOpen = true;
-      view.width = {
-        min = 30;
-        max = -1;
-        padding = 1;
-      };
       hijackCursor = true;
       syncRootWithCwd = true;
       respectBufCwd = true;
@@ -32,6 +27,11 @@
         preserveWindowProportions = true;
         float = {
           enable = true;
+        };
+        width = {
+          min = 30;
+          max = -1;
+          padding = 1;
         };
       };
       renderer = {
