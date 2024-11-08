@@ -35,9 +35,8 @@
       enable = true;
 
       sources = {
-        formatting.prettier = {
+        formatting.prettierd = {
           enable = true;
-          disableTsServerFormatter = true;
         };
         formatting.alejandra.enable = true;
       };
