@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+_: {
   plugins = {
     lsp = {
       enable = true;
@@ -44,14 +44,11 @@
     };
 
     crates-nvim.enable = true;
+    package-info = {
+      enable = true;
+      settings.hide_up_to_date = true;
+    };
   };
-
-  extraPlugins = with pkgs.vimPlugins; [
-    {
-      plugin = package-info-nvim;
-      config = "lua require('package-info').setup({ hide_up_to_date = true })";
-    }
-  ];
 
   keymaps = [
     {
