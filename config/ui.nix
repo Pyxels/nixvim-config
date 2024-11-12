@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+_: {
   plugins = {
     lualine = {
       enable = true;
@@ -41,11 +41,9 @@
         };
       };
     };
-  };
 
-  extraPlugins = with pkgs.vimPlugins; [
-    dressing-nvim
-  ];
+    dressing.enable = true;
+  };
 
   keymaps = [
     {
