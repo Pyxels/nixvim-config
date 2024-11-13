@@ -5,7 +5,7 @@
     nixpkgs.follows = "nixvim/nixpkgs";
 
     nixvim = {
-      url = "github:pyxels/nixvim?ref=feat/prettierd/disableTsFormatting";
+      url = "github:nix-community/nixvim";
       inputs = {
         flake-parts.follows = "flake-parts";
         git-hooks.follows = "git-hooks";
