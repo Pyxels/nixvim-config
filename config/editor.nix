@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   plugins = {
     nvim-tree = {
       enable = true;
@@ -104,6 +104,10 @@
 
     nvim-bqf.enable = true;
   };
+
+  extraPlugins = with pkgs; [
+    vimPlugins.faster-nvim
+  ];
 
   keymaps = [
     {
