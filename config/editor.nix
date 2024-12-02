@@ -1,67 +1,20 @@
 {pkgs, ...}: {
   plugins = {
-    nvim-tree = {
+    oil = {
       enable = true;
-      disableNetrw = true;
-      hijackNetrw = true;
-      autoClose = true;
-      actions.openFile.quitOnOpen = true;
-      hijackCursor = true;
-      syncRootWithCwd = true;
-      respectBufCwd = true;
-      updateFocusedFile = {
-        enable = true;
-        updateRoot = true;
-      };
-      onAttach = {
-        __raw = ''
-          -- open directories and files with l
-          function(bufnr)
-            local api = require("nvim-tree.api")
-            api.config.mappings.default_on_attach(bufnr)
-            vim.keymap.set("n", "l", api.node.open.edit, { buffer = bufnr, noremap = true, desc = "Edit Or Open" })
-          end
-        '';
-      };
-      view = {
-        preserveWindowProportions = true;
-        float = {
-          enable = true;
+      settings = {
+        keymaps = {
+          "l" = "actions.select";
+          "h" = "actions.parent";
         };
-        width = {
-          min = 30;
-          max = -1;
-          padding = 1;
-        };
-      };
-      renderer = {
-        icons = {
-          gitPlacement = "after";
-          modifiedPlacement = "after";
-          glyphs = {
-            default = "";
-            symlink = "";
-            folder = {
-              default = "/";
-              empty = "/";
-              emptyOpen = "/";
-              open = "/";
-              symlink = "/";
-              symlinkOpen = "/";
-            };
-            git = {
-              unstaged = "*";
-              staged = "✓";
-              unmerged = " ";
-              renamed = "->";
-              untracked = "?";
-              deleted = "x";
-              ignored = "◌";
-            };
-          };
-        };
+        columns = [
+          "permissions"
+          "size"
+          "icon"
+        ];
       };
     };
+
     web-devicons.enable = true;
 
     undotree = {
@@ -261,18 +214,10 @@
     # #################### Nvim Tree ####################
     {
       key = "<Leader>e";
-      action = "<cmd>NvimTreeToggle<cr>";
+      action = "<cmd>Oil<cr>";
       options = {
         silent = true;
-        desc = "Toggle NvimTr[e]e";
-      };
-    }
-    {
-      key = "<Leader>E";
-      action = "<cmd>NvimTreeFindFile<cr>";
-      options = {
-        silent = true;
-        desc = "Show current file in Tre[E]";
+        desc = "Toggle Oil fil[e]s";
       };
     }
     # #################### Undo Tree ####################
