@@ -62,6 +62,14 @@
     vimPlugins.faster-nvim
   ];
 
+  autoCmd = [
+    {
+      event = "FileType";
+      pattern = "oil";
+      command = "silent! lua vim.api.nvim_buf_set_keymap(0, 'n', '<Leader>e', ':bd<CR>', { noremap = true, silent = true })";
+    }
+  ];
+
   keymaps = [
     {
       key = "<Leader>q";
@@ -211,7 +219,7 @@
       };
     }
 
-    # #################### Nvim Tree ####################
+    # #################### Oil ####################
     {
       key = "<Leader>e";
       action = "<cmd>Oil<cr>";
