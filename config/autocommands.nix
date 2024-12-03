@@ -12,9 +12,7 @@ function()
   local bufnr = vim.api.nvim_get_current_buf()
   local exclude = {
     [''] = true,
-    ['NvimTree'] = true,
     ['qf'] = true,
-    ['alpha'] = true,
     ['help'] = true,
     ['undotree'] = true,
     ['diff'] = true,
@@ -37,9 +35,7 @@ function()
   local bufnr = vim.api.nvim_get_current_buf()
   local exclude = {
     [''] = true,
-    ['NvimTree'] = true,
     ['qf'] = true,
-    ['alpha'] = true,
     ['help'] = true,
     ['undotree'] = true,
     ['diff'] = true,
