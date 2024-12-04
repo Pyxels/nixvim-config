@@ -48,6 +48,25 @@
         indent.enable = true;
       };
     };
+    treesitter-context = {
+      enable = true;
+      settings.max_lines = 2;
+    };
+    treesitter-textobjects = {
+      enable = true;
+      select = {
+        enable = true;
+        keymaps = {
+          "af" = "@function.outer";
+          "if" = "@function.inner";
+        };
+      };
+      move = {
+        enable = true;
+        gotoNextStart = {"]f" = "@function.outer";};
+        gotoPreviousStart = {"[f" = "@function.outer";};
+      };
+    };
 
     nvim-surround.enable = true;
 
