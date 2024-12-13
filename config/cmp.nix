@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   plugins = {
     cmp = {
       enable = true;
@@ -41,9 +41,9 @@
           end, { 'i', 's' })";
         };
         sources = [
+          {name = "luasnip";}
           {name = "nvim_lsp";}
           {name = "crates";}
-          {name = "luasnip";}
           {name = "path";}
         ];
         snippet.expand = ''function(args) require('luasnip').lsp_expand(args.body) end'';
@@ -55,6 +55,15 @@
       settings = {
         region_check_events = "CursorHold,InsertLeave";
         delete_check_events = "TextChanged,InsertEnter";
+      };
+      fromVscode = [
+        {
+          lazyLoad = true;
+          paths = "${pkgs.vimPlugins.friendly-snippets}";
+        }
+      ];
+      filetypeExtend = {
+        typescript = ["javascript"];
       };
     };
   };
