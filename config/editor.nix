@@ -72,8 +72,6 @@
 
     comment.enable = true;
 
-    luasnip.enable = true;
-
     nvim-bqf.enable = true;
   };
 
