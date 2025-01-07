@@ -43,7 +43,7 @@ _: {
       };
     };
 
-    crates-nvim.enable = true;
+    crates.enable = true;
     package-info = {
       enable = true;
       settings.hide_up_to_date = true;
