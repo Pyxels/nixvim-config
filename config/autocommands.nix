@@ -5,6 +5,11 @@
       command = "silent! lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 200})";
     }
     {
+      event = "FileType";
+      pattern = "go";
+      callback = {__raw = "function() vim.opt_local.list = false end";};
+    }
+    {
       event = ["BufEnter" "FocusGained" "InsertLeave" "CmdlineLeave" "WinEnter"];
       callback = {
         __raw = "
