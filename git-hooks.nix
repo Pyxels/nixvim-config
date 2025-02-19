@@ -12,7 +12,10 @@ git-hooks.lib.${system}.run {
     deadnix.enable = true;
     statix.enable = true;
 
-    shellcheck.enable = true;
+    shellcheck = {
+      enable = true;
+      excludes = ["\.envrc"];
+    };
     actionlint.enable = true;
     commitizen.enable = true;
     check-merge-conflicts.enable = true;
