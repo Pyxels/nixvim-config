@@ -6,12 +6,7 @@
 
     nixvim = {
       url = "github:nix-community/nixvim";
-      inputs = {
-        flake-parts.follows = "flake-parts";
-        git-hooks.follows = "git-hooks";
-        home-manager.follows = "";
-        nix-darwin.follows = "";
-      };
+      inputs.flake-parts.follows = "flake-parts";
     };
     flake-parts.url = "github:hercules-ci/flake-parts";
 
