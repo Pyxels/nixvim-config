@@ -27,10 +27,10 @@
       list = true; # show characters defined in listchars
       mousemodel = "extend"; # no right click
       showmode = false;
-      fillchars = {fold = " ";};
-      foldmethod = "indent";
-      foldenable = false;
-      foldlevel = 99;
+      fillchars = {fold = " ";}; # remove trailing chars from fold header
+      foldmethod = "expr"; # use treesitter expr
+      foldexpr = "v:lua.vim.treesitter.foldexpr()"; # use treesitter expr
+      foldlevel = 99; # open all folds on start
     };
   };
 }
