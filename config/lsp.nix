@@ -10,6 +10,7 @@ _: {
           enable = true;
           installRustc = false;
           installCargo = false;
+          installRustfmt = false;
         };
         ts_ls.enable = true;
         volar.enable = true;
