@@ -12,7 +12,7 @@ _: {
           installCargo = false;
           installRustfmt = false;
         };
-        ts_ls.enable = true;
+        vtsls.enable = true;
         volar.enable = true;
         bashls.enable = true;
         gopls.enable = true;
