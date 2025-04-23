@@ -2,7 +2,7 @@
   autoCmd = [
     {
       event = "TextYankPost";
-      command = "silent! lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 200})";
+      callback = {__raw = "function() vim.highlight.on_yank({ higroup = 'Visual', timeout = 200 }) end";};
     }
     {
       event = "FileType";
