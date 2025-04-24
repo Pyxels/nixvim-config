@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   imports = [
     ./ui.nix
     ./color.nix
@@ -9,4 +9,5 @@
     ./lsp.nix
     ./cmp.nix
   ];
+  extraPackages = with pkgs; [ripgrep];
 }
