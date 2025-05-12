@@ -10,4 +10,8 @@
     ./cmp.nix
   ];
   extraPackages = with pkgs; [ripgrep];
+
+  nixpkgs.overlays = [
+    (import ../overlays/nui-nvim.nix)
+  ];
 }
