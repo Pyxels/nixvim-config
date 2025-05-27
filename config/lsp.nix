@@ -8,9 +8,9 @@ _: {
         nil_ls.enable = true;
         rust_analyzer = {
           enable = true;
-          installRustc = false;
-          installCargo = false;
-          installRustfmt = false;
+          installRustc = true;
+          installCargo = true;
+          installRustfmt = true;
         };
         vtsls.enable = true;
         volar.enable = true;
