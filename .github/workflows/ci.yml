@@ -6,9 +6,6 @@ on:
 
 jobs:
   checks:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: DeterminateSystems/nix-installer-action@main
-      - name: "Run .#checks in parallel"
-        run: nix run github:Mic92/nix-fast-build -- --no-nom --skip-cached
+    uses: pyxels/nixos-config/.github/workflows/ci-check.yml@master
+    secrets:
+      ATTIC_CACHE_KEY: ${{ secrets.ATTIC_CACHE_KEY }}
