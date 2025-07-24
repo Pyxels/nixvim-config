@@ -8,9 +8,11 @@ _: {
         nil_ls.enable = true;
         rust_analyzer = {
           enable = true;
+          packageFallback = true;
           installRustc = true;
           installCargo = true;
           installRustfmt = true;
+          settings.check.allTargets = false;
         };
         vtsls = {
           enable = true;
