@@ -14,10 +14,8 @@ _: {
           installRustfmt = true;
           settings.check.allTargets = false;
         };
-        vtsls = {
-          enable = true;
-          onAttach.function = "client.server_capabilities.documentFormattingProvider = false";
-        };
+
+        ts_ls.enable = true;
         volar.enable = true;
         bashls.enable = true;
         gopls.enable = true;
@@ -41,7 +39,10 @@ _: {
       enable = true;
 
       sources = {
-        formatting.prettierd.enable = true;
+        formatting.prettierd = {
+          enable = true;
+          disableTsServerFormatter = true;
+        };
         formatting.alejandra.enable = true;
       };
     };
