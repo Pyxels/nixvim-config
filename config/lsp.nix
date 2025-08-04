@@ -17,6 +17,7 @@ _: {
 
         ts_ls.enable = true;
         volar.enable = true;
+        angularls.enable = true;
         bashls.enable = true;
         gopls.enable = true;
         jdtls.enable = true;
