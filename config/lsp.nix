@@ -19,6 +19,7 @@ _: {
         volar.enable = true;
         bashls.enable = true;
         gopls.enable = true;
+        jdtls.enable = true;
       };
 
       postConfig = "
