@@ -1,4 +1,8 @@
-_: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   plugins = {
     lsp = {
       enable = true;
@@ -20,7 +24,13 @@ _: {
         angularls.enable = true;
         bashls.enable = true;
         gopls.enable = true;
-        jdtls.enable = true;
+        jdtls = {
+          enable = true;
+          cmd = [
+            (lib.getExe pkgs.jdt-language-server)
+            "--jvm-arg=-javaagent:${pkgs.lombok}/share/java/lombok.jar"
+          ];
+        };
       };
 
       postConfig = "
