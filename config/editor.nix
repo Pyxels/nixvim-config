@@ -100,7 +100,7 @@
     # #################### Telescope ####################
     {
       key = "<Leader>b";
-      action = "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>";
+      action = "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false,layout_config={width=0.8}})<cr>";
       options = {
         silent = true;
         desc = "Telescope [B]uffers";
@@ -108,7 +108,7 @@
     }
     {
       key = "<Leader>f";
-      action = "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false} )<cr>";
+      action = "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false,layout_config={width=0.8}} )<cr>";
       options = {
         silent = true;
         desc = "[F]ind files";
