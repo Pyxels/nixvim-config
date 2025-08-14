@@ -123,6 +123,14 @@
       };
     }
     {
+      key = "<Leader>fw";
+      action = "<cmd>Telescope grep_string<cr>";
+      options = {
+        silent = true;
+        desc = "[F]ind [W]ord under cursor";
+      };
+    }
+    {
       key = "<Leader>sb";
       action = "<cmd>Telescope git_branches<cr>";
       options = {
