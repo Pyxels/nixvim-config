@@ -51,11 +51,14 @@
       enable = true;
 
       sources = {
-        formatting.prettierd = {
-          enable = true;
-          disableTsServerFormatter = true;
+        formatting = {
+          prettierd = {
+            enable = true;
+            disableTsServerFormatter = true;
+          };
+          alejandra.enable = true;
+          google_java_format.enable = true;
         };
-        formatting.alejandra.enable = true;
       };
     };
 
