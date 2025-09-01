@@ -52,7 +52,7 @@
 
       sources = {
         formatting = {
-          prettierd = {
+          prettier = {
             enable = true;
             disableTsServerFormatter = true;
           };
