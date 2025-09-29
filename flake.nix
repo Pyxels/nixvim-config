@@ -68,14 +68,14 @@
 
         flake = {
           homeModules.default = moduleWithSystem (
-            perSystem: _: {
+            {config} @ perSystem: _: {
               imports = [./home-manager-module.nix];
               nixvim-config.package = perSystem.config.packages.default;
             }
           );
 
           nixosModules.default = moduleWithSystem (
-            perSystem: _: {
+            {config} @ perSystem: _: {
               imports = [./nixos-module.nix];
               nixvim-config.package = perSystem.config.packages.default;
             }
