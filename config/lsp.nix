@@ -21,7 +21,16 @@
 
         ts_ls.enable = true;
         volar.enable = true;
-        angularls.enable = true;
+        angularls = {
+          enable = true;
+          onAttach.function = ''
+            for _, other_client in ipairs(vim.lsp.get_clients()) do
+              if other_client.name == "ts_ls" then
+                other_client.server_capabilities.referencesProvider = false
+              end
+            end
+          '';
+        };
         bashls.enable = true;
         gopls.enable = true;
         jdtls = {
