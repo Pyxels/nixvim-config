@@ -20,7 +20,7 @@
         };
 
         ts_ls.enable = true;
-        volar.enable = true;
+        vue_ls.enable = true;
         angularls = {
           enable = true;
           onAttach.function = ''
