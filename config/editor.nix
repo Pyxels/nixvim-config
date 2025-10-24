@@ -123,11 +123,11 @@
       };
     }
     {
-      key = "<Leader>fw";
+      key = "<Leader>w";
       action = "<cmd>Telescope grep_string<cr>";
       options = {
         silent = true;
-        desc = "[F]ind [W]ord under cursor";
+        desc = "Find [W]ord under cursor";
       };
     }
     {
