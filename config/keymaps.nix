@@ -235,5 +235,30 @@
         desc = "Remove highlights";
       };
     }
+
+    {
+      key = "<Leader>sf";
+      action = "<cmd>let @+ = expand(\"%:t\")<CR>";
+      options = {
+        silent = true;
+        desc = "[S]ave [F]ilename to clipboard";
+      };
+    }
+    {
+      key = "<Leader>sr";
+      action = "<cmd>let @+ = expand(\"%\")<CR>";
+      options = {
+        silent = true;
+        desc = "[S]ave [R]elative path to clipboard";
+      };
+    }
+    {
+      key = "<Leader>sp";
+      action = "<cmd>let @+ = expand(\"%:p\")<CR>";
+      options = {
+        silent = true;
+        desc = "[S]ave [P]ath to clipboard";
+      };
+    }
   ];
 }
