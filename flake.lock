@@ -139,6 +139,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-jdtls": {
+      "locked": {
+        "lastModified": 1759826507,
+        "narHash": "sha256-vwXL9H5zDHEQA0oFpww2one0/hkwnPAjc47LRph6d0I=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "bce5fe2bb998488d8e7e7856315f90496723793c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "bce5fe2bb998488d8e7e7856315f90496723793c",
+        "type": "github"
+      }
+    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1754788789,
@@ -208,6 +224,7 @@
           "nixvim",
           "nixpkgs"
         ],
+        "nixpkgs-jdtls": "nixpkgs-jdtls",
         "nixvim": "nixvim"
       }
     },

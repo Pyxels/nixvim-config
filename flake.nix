@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.follows = "nixvim/nixpkgs";
+    nixpkgs-jdtls.url = "github:nixos/nixpkgs/bce5fe2bb998488d8e7e7856315f90496723793c";
 
     nixvim = {
       url = "github:nix-community/nixvim";
@@ -44,6 +45,14 @@
             module = config;
           };
         in {
+          _module.args.pkgs = import inputs.nixpkgs {
+            inherit system;
+            overlays = [
+              (_final: _prev: {
+                jdtls-1_49 = inputs.nixpkgs-jdtls.legacyPackages.${system}.jdt-language-server;
+              })
+            ];
+          };
           checks = {
             # Run `nix flake check .` to verify that the config is not broken
             nixvim = nixvim.lib.${system}.check.mkTestDerivationFromNvim {

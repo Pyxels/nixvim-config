@@ -1,8 +1,4 @@
-{
-  lib,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   plugins = {
     lsp = {
       enable = true;
@@ -35,10 +31,9 @@
         gopls.enable = true;
         jdtls = {
           enable = true;
-          cmd = [
-            (lib.getExe pkgs.jdt-language-server)
-            "--jvm-arg=-javaagent:${pkgs.lombok}/share/java/lombok.jar"
-          ];
+          package = pkgs.jdtls-1_49; # i was having issues with 1.51 crashing regularely
+          rootMarkers = [".git"];
+          settings.java.format.enabled = false; # in favor of google-java-format via null-ls
         };
       };
 
