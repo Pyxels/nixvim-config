@@ -55,17 +55,23 @@
     };
     treesitter-textobjects = {
       enable = true;
-      select = {
-        enable = true;
-        keymaps = {
-          "af" = "@function.outer";
-          "if" = "@function.inner";
+      settings = {
+        select = {
+          enable = true;
+          keymaps = {
+            "af" = "@function.outer";
+            "if" = "@function.inner";
+          };
         };
-      };
-      move = {
-        enable = true;
-        gotoNextStart = {"]f" = "@function.outer";};
-        gotoPreviousStart = {"[f" = "@function.outer";};
+        move = {
+          enable = true;
+          gotoNextStart = {
+            "]f" = "@function.outer";
+          };
+          gotoPreviousStart = {
+            "[f" = "@function.outer";
+          };
+        };
       };
     };
 
