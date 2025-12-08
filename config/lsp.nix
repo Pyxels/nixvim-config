@@ -73,6 +73,25 @@
     };
   };
 
+  extraPlugins = with pkgs.vimPlugins; [
+    sonarlint-nvim
+  ];
+  plugins.lsp.luaConfig.post = with pkgs;
+  # lua
+    ''
+      require("sonarlint").setup({
+        server = {
+          cmd = {
+            "${lib.getExe sonarlint-ls}",
+            "-stdio",
+            "-analyzers",
+            vim.fn.expand("${sonarlint-ls}/share/plugins/sonarjava.jar")
+          },
+        },
+        filetypes = { "java" },
+      })
+    '';
+
   keymaps = [
     {
       key = "<Leader>li";
