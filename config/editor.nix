@@ -4,14 +4,10 @@
       enable = true;
       settings = {
         keymaps = {
-          "l" = "actions.select";
-          "h" = "actions.parent";
+          "-" = "actions.select";
+          "." = "actions.parent";
         };
-        columns = [
-          "permissions"
-          "size"
-          "icon"
-        ];
+        columns = ["icon"];
         view_options.show_hidden = true;
       };
     };
