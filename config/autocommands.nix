@@ -3,11 +3,13 @@
     {
       event = "TextYankPost";
       callback = {__raw = "function() vim.highlight.on_yank({ higroup = 'Visual', timeout = 200 }) end";};
+      desc = "highlight yanked text for a short time";
     }
     {
       event = "FileType";
       pattern = "go";
       callback = {__raw = "function() vim.opt_local.list = false end";};
+      desc = "disable tab visualisation in go files";
     }
     {
       event = ["BufEnter" "FocusGained" "InsertLeave" "CmdlineLeave" "WinEnter"];
@@ -31,6 +33,7 @@ function()
   vim.o.cul = true
 end";
       };
+      desc = "disable/enable line numbers";
     }
     {
       event = ["BufLeave" "FocusLost" "InsertEnter" "CmdlineEnter" "WinLeave"];
@@ -54,6 +57,7 @@ function()
   vim.o.number = true
 end";
       };
+      desc = "disable/enable line numbers";
     }
   ];
 }
