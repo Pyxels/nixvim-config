@@ -2,6 +2,7 @@
   plugins = {
     cmp = {
       enable = true;
+      package = pkgs.nvim-cmp-locality;
       settings = {
         mapping = {
           "<C-k>" = "cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select })";
