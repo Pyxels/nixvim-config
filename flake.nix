@@ -51,11 +51,6 @@
               (_final: _prev: {
                 jdtls-1_49 = inputs.nixpkgs-jdtls.legacyPackages.${system}.jdt-language-server;
               })
-              (_final: prev: {
-                nvim-cmp-locality = prev.vimPlugins.nvim-cmp.overrideAttrs (_: {
-                  patches = [./cmp_locality_perf.patch];
-                });
-              })
             ];
           };
           checks = {
