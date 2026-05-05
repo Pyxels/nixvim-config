@@ -87,6 +87,13 @@
             "-analyzers",
             vim.fn.expand("${sonarlint-ls}/share/plugins/sonarjava.jar")
           },
+          settings = {
+            sonarlint = {
+              rules = {
+                ["java:S1192"] = { level = "off" },
+              },
+            },
+          },
         },
         filetypes = { "java" },
       })
