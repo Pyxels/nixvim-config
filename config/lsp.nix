@@ -134,7 +134,7 @@
     }
     {
       key = "<Leader>lj";
-      action = "<cmd>lua vim.diagnostic.goto_next()<CR>";
+      action = "<cmd>lua vim.diagnostic.jump({ count = 1 })<CR>";
       options = {
         silent = true;
         desc = "LSP: Next Diagnostic";
@@ -142,7 +142,7 @@
     }
     {
       key = "<Leader>lk";
-      action = "<cmd>lua vim.diagnostic.goto_prev()<cr>";
+      action = "<cmd>lua vim.diagnostic.jump({ count = -1 })<cr>";
       options = {
         silent = true;
         desc = "LSP: Prev Diagnostic";
