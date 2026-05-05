@@ -47,6 +47,10 @@
         in {
           _module.args.pkgs = import inputs.nixpkgs {
             inherit system;
+            config.allowUnfreePredicate = pkg:
+              builtins.elem (inputs.nixpkgs.lib.getName pkg) [
+                "faster.nvim"
+              ];
             overlays = [
               (_final: _prev: {
                 jdtls-1_49 = inputs.nixpkgs-jdtls.legacyPackages.${system}.jdt-language-server;
