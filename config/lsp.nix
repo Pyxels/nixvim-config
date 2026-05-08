@@ -5,7 +5,13 @@
       inlayHints = true;
 
       servers = {
-        nil_ls.enable = true;
+        nil_ls = {
+          enable = true;
+          onAttach.function = ''
+            client.server_capabilities.documentFormattingProvider = false
+            client.server_capabilities.documentRangeFormattingProvider = false
+          '';
+        };
         rust_analyzer = {
           enable = true;
           packageFallback = true;
