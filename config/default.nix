@@ -9,5 +9,5 @@
     ./lsp.nix
     ./cmp.nix
   ];
-  extraPackages = with pkgs; [ripgrep];
+  extraPackages = with pkgs; [ripgrep fd];
 }

@@ -110,7 +110,7 @@
     }
     {
       key = "<Leader>f";
-      action = "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false,layout_config={width=0.8}} )<cr>";
+      action = "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false,layout_config={width=0.8},hidden = true,find_command = {'fd','--type','f','--hidden','--exclude','.git'}})<cr>";
       options = {
         silent = true;
         desc = "[F]ind files";
