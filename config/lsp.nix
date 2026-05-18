@@ -65,6 +65,7 @@
           prettier = {
             enable = true;
             disableTsServerFormatter = true;
+            settings.extra_filetypes = ["json5"];
           };
           alejandra.enable = true;
           google_java_format.enable = true;
