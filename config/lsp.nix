@@ -69,6 +69,7 @@
           };
           alejandra.enable = true;
           google_java_format.enable = true;
+          xmllint.enable = true;
         };
       };
     };
