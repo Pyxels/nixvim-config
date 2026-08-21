@@ -37,7 +37,6 @@
         gopls.enable = true;
         jdtls = {
           enable = true;
-          package = pkgs.jdtls-1_49; # i was having issues with 1.51 crashing regularely
           rootMarkers = [".git"];
           settings.java.format.enabled = false; # in favor of google-java-format via null-ls
         };
