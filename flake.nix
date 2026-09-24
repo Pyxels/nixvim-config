@@ -57,7 +57,7 @@
               name = "A nixvim configuration";
             };
 
-            git-hooks = import ./git-hooks.nix {inherit git-hooks system;};
+            git-hooks = import ./git-hooks.nix {inherit git-hooks system pkgs;};
           };
 
           devShells.default = pkgs.mkShell {

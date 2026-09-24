@@ -1,10 +1,12 @@
 {
   git-hooks,
   system,
+  pkgs,
   ...
 }:
 git-hooks.lib.${system}.run {
   src = ./.;
+  package = pkgs.prek;
   hooks = {
     alejandra.enable = true;
     flake-checker.enable = true;
